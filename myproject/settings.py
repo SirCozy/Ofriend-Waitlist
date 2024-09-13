@@ -115,3 +115,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ]
 }
+
+ALLOWED_HOSTS = ['ofriend-waitlist.onrender.com', 'localhost', '127.0.0.1']
