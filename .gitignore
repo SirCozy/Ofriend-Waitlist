@@ -1,0 +1,6 @@
+*.pyc          # Ignore Python bytecode files
+__pycache__/   # Ignore Python cache directories
+db.sqlite3     # Ignore SQLite database files
+.env           # Ignore environment configuration files
+/static/       # Ignore the static files directory
+/media/        # Ignore the media files directory
