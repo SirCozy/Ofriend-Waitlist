@@ -6,3 +6,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+class User(models.Model):
+    email = models.EmailField(unique=True)
