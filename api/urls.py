@@ -1,6 +1,5 @@
-from django.urls import path
-from .views import create_contact
+from django.urls import path, include
 
 urlpatterns = [
-    path('contacts/', create_contact, name='create_contact'),
+    path('contacts/', include('contacts.urls')),  # Contact-related URLs
 ]

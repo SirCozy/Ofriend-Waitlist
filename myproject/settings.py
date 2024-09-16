@@ -31,11 +31,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'corsheaders',
-    'contacts',
-    'django_ratelimit',
+    'api',        # Make sure 'api' is included
+    'contacts',   # Make sure 'contacts' is included
+    'rest_framework',  # Required for DRF
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

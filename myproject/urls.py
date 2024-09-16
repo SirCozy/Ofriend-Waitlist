@@ -1,8 +1,8 @@
 """
-This module defines the URL patterns for the myproject application.
+URL configuration for the myproject application.
 
-It includes:
-- Admin site routes
+Includes:
+- Admin routes
 - API routes for the contacts app using Django REST Framework
 """
 
@@ -16,6 +16,7 @@ router = DefaultRouter()
 router.register(r'contacts', ContactViewSet, basename='contact')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),  # Include the API routes from the router
+    path('admin/', admin.site.urls),            # Admin site routes
+    path('api/', include(router.urls)),         # API routes for the contacts app
+    path('', include('api.urls')),              # Include other API URLs from api/urls.py
 ]
