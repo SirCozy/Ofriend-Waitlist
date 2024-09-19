@@ -1,11 +1,3 @@
-"""
-URL configuration for the myproject application.
-
-Includes:
-- Admin routes
-- API routes for the contacts app using Django REST Framework
-"""
-
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
@@ -17,6 +9,8 @@ router.register(r'contacts', ContactViewSet, basename='contact')
 
 urlpatterns = [
     path('admin/', admin.site.urls),            # Admin site routes
-    path('api/', include(router.urls)),         # API routes for the contacts app
-    path('', include('api.urls')),              # Include other API URLs from api/urls.py
+    path('api/', include(router.urls)),         # API routes for the contacts app (DRF ViewSet)
+    path('api/', include('api.urls')),          # Include other API URLs from api/urls.py
+    path('users/', include('users.urls')),      # Include user URLs
+    path('courses/', include('courses.urls')),  # Include courses URLs
 ]
