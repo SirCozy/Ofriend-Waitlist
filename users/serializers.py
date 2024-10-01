@@ -7,20 +7,17 @@ class UserSerializer(serializers.ModelSerializer):
     """
     Serializer for the User model to handle registration.
     """
-    password = serializers.CharField(write_only=True, required=True, min_length=8)
-
     class Meta:
         model = User
-        fields = ['username', 'email', 'password']
+        fields = ['username', 'email']  # Removed 'password'
 
     def create(self, validated_data):
         """
-        Create and return a new user after saving the hashed password.
+        Create and return a new user without a password.
         """
         user = User(
             email=validated_data['email'],
             username=validated_data['username'],
         )
-        user.set_password(validated_data['password'])  # Hash the password
-        user.save()
+        user.save()  # No password handling needed
         return user
